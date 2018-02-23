@@ -1,11 +1,29 @@
+#include <LaborkaConfig.h>
 #include <iostream>
-#include "trygonometria.h"
+
+#ifdef USE_TRIGONOMETRY_DEGREE
+	#include "trygonometria.h"
+#else
+	#include <cmath>
+#endif
+
 
 int main()
 {
-	std::cout << degreemath::sin(90) << std::endl;
-	std::cout << degreemath::cos(90) << std::endl;
-	std::cout << degreemath::tan(90) << std::endl;
-	std::cout << degreemath::ctg(90) << std::endl;
+	double angle = 90;
+	double angle_rad = angle*3.14/180.0;
+
+	#ifdef USE_TRIGONOMETRY_DEGREE
+		std::cout << degreemath::sin(angle) << std::endl;
+		std::cout << degreemath::cos(angle) << std::endl;
+		std::cout << degreemath::tan(angle) << std::endl;
+		std::cout << degreemath::ctg(angle) << std::endl;
+	#else	
+		std::cout << degreemath::sin(angle_rad) << std::endl;
+		std::cout << degreemath::cos(angle_rad) << std::endl;
+		std::cout << degreemath::tan(angle_rad) << std::endl;
+		std::cout << degreemath::ctg(angle_rad) << std::endl;
+	#endif
+	
 	return 0;
 }
