@@ -19,10 +19,10 @@ int main()
 		std::cout << degreemath::tan(angle) << std::endl;
 		std::cout << degreemath::ctg(angle) << std::endl;
 	#else	
-		std::cout << degreemath::sin(angle_rad) << std::endl;
-		std::cout << degreemath::cos(angle_rad) << std::endl;
-		std::cout << degreemath::tan(angle_rad) << std::endl;
-		std::cout << degreemath::ctg(angle_rad) << std::endl;
+		std::cout << sin(angle_rad) << std::endl;
+		std::cout << cos(angle_rad) << std::endl;
+		std::cout << tan(angle_rad) << std::endl;
+		std::cout << 1/tan(angle_rad) << std::endl;
 	#endif
 	
 	return 0;
